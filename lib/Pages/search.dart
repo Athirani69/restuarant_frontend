@@ -26,7 +26,9 @@ class _srchState extends State<srch> {
               SizedBox(height: 10,),
               ElevatedButton(onPressed: (){}, child: Text("SEARCH")),
               SizedBox(height: 10,),
-              ElevatedButton(onPressed: (){}, child: Text("BACK"))
+              ElevatedButton(onPressed: (){
+                Navigator.pop(context);
+              }, child: Text("BACK"))
             ],
           ),
         ),

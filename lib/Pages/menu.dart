@@ -16,17 +16,27 @@ class menu extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            ElevatedButton(onPressed: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context)=>add()));
-            }, child: Text("ADD ")),
+            SizedBox(
+              width: 200,
+              child: ElevatedButton(onPressed: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>add()));
+              }, child: Text("ADD ")),
+            ),
             SizedBox(height: 10,),
-            ElevatedButton(onPressed: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context)=>vew()));
-            }, child: Text("VIEW")),
+            SizedBox(
+              width: 200,
+              child: ElevatedButton(onPressed: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>vew()));
+              }, child: Text("VIEW")),
+            ),
             SizedBox(height: 10,),
-            ElevatedButton(onPressed: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context)=>srch()));
-            }, child: Text("SEARCH"))
+            SizedBox(
+              width: 200,
+              child: ElevatedButton(onPressed: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>srch()));
+
+                }, child: Text("SEARCH")),
+            )
           ],
         ),
       ),

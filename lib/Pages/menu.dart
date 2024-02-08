@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:restuarant/Pages/add.dart';
 
 class menu extends StatelessWidget {
   const menu({super.key});
@@ -13,7 +14,9 @@ class menu extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            ElevatedButton(onPressed: (){}, child: Text("ADD ")),
+            ElevatedButton(onPressed: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>add()));
+            }, child: Text("ADD ")),
             SizedBox(height: 10,),
             ElevatedButton(onPressed: (){}, child: Text("VIEW")),
             SizedBox(height: 10,),

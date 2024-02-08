@@ -8,6 +8,22 @@ class add extends StatefulWidget {
 }
 
 class _addState extends State<add> {
+  TextEditingController id=new TextEditingController();
+  TextEditingController nm=new TextEditingController();
+  TextEditingController fon=new TextEditingController();
+  TextEditingController fd=new TextEditingController();
+  TextEditingController prc=new TextEditingController();
+  void send() async{
+    final resp=await Api().sendData(id.text, nm.text, fon.text, fd.text,prc.text);
+    if(resp["status"]=="success")
+    {
+      print("added");
+    }
+    else
+    {
+      print("not added");
+    }
+  }
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -22,6 +38,7 @@ class _addState extends State<add> {
             child: Column(
               children: [
                 TextField(
+                  controller: id,
                   decoration: InputDecoration(
                     labelText: ("Enter orderid"),
                     border: OutlineInputBorder()
@@ -29,6 +46,7 @@ class _addState extends State<add> {
                 ),
                 SizedBox(height: 10,),
                 TextField(
+                  controller: nm,
                   decoration: InputDecoration(
                       labelText: ("Enter Customer name"),
                       border: OutlineInputBorder()
@@ -36,6 +54,7 @@ class _addState extends State<add> {
                 ),
                 SizedBox(height: 10,),
                 TextField(
+                  controller: fon,
                   decoration: InputDecoration(
                       labelText: ("Enter customer number"),
                       border: OutlineInputBorder()
@@ -43,6 +62,7 @@ class _addState extends State<add> {
                 ),
                 SizedBox(height: 10,),
                 TextField(
+                  controller: fd,
                   decoration: InputDecoration(
                       labelText: ("Food details"),
                       border: OutlineInputBorder()
@@ -50,6 +70,7 @@ class _addState extends State<add> {
                 ),
                 SizedBox(height: 10,),
                 TextField(
+                  controller: prc,
                   decoration: InputDecoration(
                       labelText: ("Price"),
                       border: OutlineInputBorder()
@@ -58,7 +79,7 @@ class _addState extends State<add> {
                 SizedBox(height: 10,),
                 SizedBox(
                     width: 200,
-                    child: ElevatedButton(onPressed: (){}, child: Text("ADD FOOD"))),
+                    child: ElevatedButton(onPressed: send, child: Text("ADD FOOD"))),
                 SizedBox(height: 10,),
                 SizedBox(
                   width: 200,

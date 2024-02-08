@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:restuarant/Pages/add.dart';
+import 'package:restuarant/Pages/search.dart';
+import 'package:restuarant/Pages/view.dart';
 
 class menu extends StatelessWidget {
   const menu({super.key});
@@ -18,9 +20,13 @@ class menu extends StatelessWidget {
               Navigator.push(context, MaterialPageRoute(builder: (context)=>add()));
             }, child: Text("ADD ")),
             SizedBox(height: 10,),
-            ElevatedButton(onPressed: (){}, child: Text("VIEW")),
+            ElevatedButton(onPressed: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>vew()));
+            }, child: Text("VIEW")),
             SizedBox(height: 10,),
-            ElevatedButton(onPressed: (){}, child: Text("SEARCH"))
+            ElevatedButton(onPressed: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>srch()));
+            }, child: Text("SEARCH"))
           ],
         ),
       ),
